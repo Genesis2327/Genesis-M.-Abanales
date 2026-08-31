@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Genesis M. Abanales — Full-Stack Developer and IT Graduate based in Cabuyao, Laguna, Philippines."
+    />
+    <title>Genesis M. Abanales · Full-Stack Developer</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Apply stored theme before first paint to avoid a flash of the wrong palette. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("gma-theme");
+          var theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="cursor" aria-hidden="true">
+      <div class="cursor__ring"></div>
+      <div class="cursor__dot"></div>
+    </div>
+
+    <header class="nav" id="site-nav">
+      <div class="nav__chrome">
+        <a class="nav__brand" href="#home">
+          <span class="nav__prompt" aria-hidden="true">~/</span>
+          <span>gma.signal</span>
+        </a>
+        <button
+          class="nav__burger"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="primary-nav" class="nav__links" aria-label="Primary">
+          <a href="#home" data-section="home">Home</a>
+          <a href="#about" data-section="about">About</a>
+          <a href="#experience" data-section="experience">Experience</a>
+          <a href="#projects" data-section="projects">Projects</a>
+          <a href="#skills" data-section="skills">Skills</a>
+          <a href="#certifications" data-section="certifications">Certifications</a>
+          <a href="#education" data-section="education">Education</a>
+          <a href="#contact" data-section="contact">Contact</a>
+        </nav>
+        <button
+          class="theme-toggle"
+          type="button"
+          role="switch"
+          aria-checked="false"
+          aria-label="Switch to light mode"
+        >
+          <span class="theme-toggle__track">
+            <span class="theme-toggle__thumb"></span>
+          </span>
+          <span class="theme-toggle__label" data-theme-label>Dark</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home" data-observe>
+        <canvas class="hero__grid" id="hero-grid" aria-hidden="true"></canvas>
+        <div class="hero__scan" aria-hidden="true"></div>
+        <div class="hero__layout">
+          <aside class="hero__console reveal">
+            <div class="console-bar">
+              <span class="console-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span>sys://status</span>
+            </div>
+            <p class="eyebrow">Cabuyao, Laguna, Philippines</p>
+            <h1>
+              <span class="hero__kicker">operator</span>
+              Genesis M.<br />Abanales
+            </h1>
+            <p class="hero__role">Full-Stack Developer · IT Graduate</p>
+            <p class="hero__type" aria-live="polite">
+              <span class="hero__prompt">$</span>
+              <span id="typewriter">Full-Stack Developer</span>
+              <span class="caret" aria-hidden="true"></span>
+            </p>
+            <ul class="hero__meta">
+              <li>
+                <a href="mailto:abanalesgenesis76@gmail.com">abanalesgenesis76@gmail.com</a>
+              </li>
+              <li>
+                <a href="tel:+639151129644">+63 915 112 9644</a>
+                <span aria-hidden="true"> · </span>
+                <a href="tel:+639244800951">+63 924 480 0951</a>
+              </li>
+              <li>
+                <a href="https://github.com/Genesis2327" target="_blank" rel="noopener noreferrer"
+                  >github.com/Genesis2327</a
+                >
+              </li>
+            </ul>
+            <div class="hero__actions">
+              <a class="btn btn--primary magnetic" href="#contact">Establish contact</a>
+              <a class="btn btn--ghost magnetic" href="#projects">Inspect projects</a>
+            </div>
+          </aside>
+          <figure class="hero__portrait reveal">
+            <div class="hud-frame">
+              <span class="hud-corner hud-corner--tl"></span>
+              <span class="hud-corner hud-corner--tr"></span>
+              <span class="hud-corner hud-corner--bl"></span>
+              <span class="hud-corner hud-corner--br"></span>
+              <img
+                src="assets/genesis-abanales.jpg"
+                alt="Professional headshot of Genesis M. Abanales in a suit and green tie"
+                width="640"
+                height="800"
+              />
+              <figcaption>
+                <span>ID // GMA-2327</span>
+                <span>SIGNAL LOCKED</span>
+              </figcaption>
+            </div>
+          </figure>
+        </div>
+        <div class="hero__ticker" aria-hidden="true">
+          <div class="hero__ticker-track">
+            <span>React.js</span><span>Node.js</span><span>Python</span><span>MySQL</span
+            ><span>AWS S3</span><span>OpenCV</span><span>QA</span><span>Auxano</span>
+            <span>React.js</span><span>Node.js</span><span>Python</span><span>MySQL</span
+            ><span>AWS S3</span><span>OpenCV</span><span>QA</span><span>Auxano</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about" data-observe>
+        <div class="section-rail">
+          <span>01</span>
+          <span>dossier</span>
+        </div>
+        <div class="about__grid">
+          <header class="about__head reveal">
+            <p class="eyebrow">// about</p>
+            <h2>Summary</h2>
+            <dl class="about__spec">
+              <div>
+                <dt>Role</dt>
+                <dd>Full-Stack Developer · IT Graduate</dd>
+              </div>
+              <div>
+                <dt>Node</dt>
+                <dd>Cabuyao, Laguna, Philippines</dd>
+              </div>
+              <div>
+                <dt>Stack</dt>
+                <dd>React.js · Node.js · Python · AWS</dd>
+              </div>
+            </dl>
+          </header>
+          <article class="editor reveal">
+            <div class="editor__bar">
+              <span>summary.md</span>
+              <span>read-only</span>
+            </div>
+            <div class="editor__body">
+              <ol class="editor__lines" aria-hidden="true">
+                <li>01</li>
+                <li>02</li>
+                <li>03</li>
+                <li>04</li>
+                <li>05</li>
+              </ol>
+              <p>
+                Information Technology graduate with professional experience in software development,
+                IT support, and quality assurance. Experienced in developing and maintaining Auxano,
+                an employee management and payroll system, using React.js, Node.js, Express.js,
+                MySQL, Sequelize, Python, and AWS. Skilled in full-stack web and mobile development,
+                REST API integration, manual QA testing, cloud storage, computer vision, system
+                administration, networking, and technical troubleshooting. Experienced in
+                collaborating with development teams, resolving technical issues, and creating
+                technical documentation to support reliable and efficient system operations.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="experience" id="experience" data-observe>
+        <div class="section-rail">
+          <span>02</span>
+          <span>git log</span>
+        </div>
+        <header class="section-head reveal">
+          <p class="eyebrow">// experience</p>
+          <h2>Commit history</h2>
+        </header>
+        <ol class="gitlog">
+          <li class="gitlog__item reveal">
+            <div class="gitlog__graph" aria-hidden="true">
+              <span class="gitlog__node"></span>
+              <span class="gitlog__wire"></span>
+            </div>
+            <article class="commit">
+              <header class="commit__meta">
+                <span class="hash">commit 7a1c2026</span>
+                <span class="branch">main</span>
+                <time datetime="2026-01">January 2026 – Present</time>
+              </header>
+              <h3>Associate Developer – Software Development</h3>
+              <p class="commit__org">
+                DGP Associate and CPAs — IT Department, Cabuyao, Laguna, Philippines
+              </p>
+              <ul>
+                <li>
+                  Developed and maintained features of Auxano, enhancing employee management and
+                  payroll workflows with React.js, Node.js, and MySQL.
+                </li>
+                <li>
+                  Integrated a Python-based face recognition service using OpenCV and PyTorch to
+                  improve employee attendance verification accuracy.
+                </li>
+                <li>
+                  Implemented AWS S3 for secure cloud storage solutions, streamlining document
+                  access and management.
+                </li>
+                <li>
+                  Conducted comprehensive manual QA testing, creating detailed test cases to ensure
+                  software quality and reliability.
+                </li>
+                <li>
+                  Authored extensive documentation covering system features and user manuals,
+                  facilitating better understanding among users.
+                </li>
+              </ul>
+            </article>
+          </li>
+          <li class="gitlog__item reveal">
+            <div class="gitlog__graph" aria-hidden="true">
+              <span class="gitlog__node"></span>
+              <span class="gitlog__wire gitlog__wire--end"></span>
+            </div>
+            <article class="commit">
+              <header class="commit__meta">
+                <span class="hash">commit 0f2e2026</span>
+                <span class="branch">intern</span>
+                <time datetime="2026">2026</time>
+              </header>
+              <h3>IT Intern – Software Development</h3>
+              <p class="commit__org">
+                DGP Associate and CPAs — IT Department, Cabuyao, Laguna, Philippines
+              </p>
+              <ul>
+                <li>
+                  Supported frontend development of Auxano with React.js, optimizing user interfaces
+                  for better user experience.
+                </li>
+                <li>
+                  Performed manual QA testing, including defect reporting and documentation to
+                  refine application performance.
+                </li>
+                <li>
+                  Assisted in API testing using Postman, identifying and resolving system issues
+                  under supervision of senior developers.
+                </li>
+                <li>
+                  Developed technical documentation for system features and user documentation to
+                  aid in software usability.
+                </li>
+                <li>
+                  Collaborated with the team to troubleshoot application issues, enhancing overall
+                  system functionality.
+                </li>
+              </ul>
+            </article>
+          </li>
+        </ol>
+      </section>
+
+      <section class="projects" id="projects" data-observe>
+        <div class="section-rail">
+          <span>03</span>
+          <span>tape</span>
+        </div>
+        <header class="section-head reveal">
+          <p class="eyebrow">// projects</p>
+          <h2>Horizontal build log</h2>
+          <p class="hint">Scroll sideways — two production systems on one reel.</p>
+        </header>
+        <div class="reel" tabindex="0" aria-label="Project reel">
+          <article class="reel__card">
+            <div class="reel__index">01 / AUX</div>
+            <div class="reel__body">
+              <p class="eyebrow">Developer, 2026</p>
+              <h3>Auxano</h3>
+              <p class="reel__client">
+                DGP Associate and CPAs · HRIS, Payroll and Compliance ·
+                <a href="https://auxanoph.com/" target="_blank" rel="noopener noreferrer"
+                  >Live: https://auxanoph.com/</a
+                >
+              </p>
+              <ul>
+                <li>
+                  Engineered a comprehensive employee management system, streamlining workflows for
+                  timekeeping and payroll.
+                </li>
+                <li>
+                  Managed a monorepo encompassing frontend, backend, and mobile application services
+                  to ensure integrated functionality.
+                </li>
+                <li>
+                  Implemented a Python-based face recognition feature to enhance security in
+                  attendance tracking.
+                </li>
+                <li>
+                  Deployed AWS S3 integration for secure file storage, enhancing data protection
+                  protocols.
+                </li>
+                <li>
+                  Conducted manual QA testing, generating test cases and user manuals to support
+                  deployment efforts.
+                </li>
+              </ul>
+              <ul class="tags">
+                <li>React.js</li>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>MySQL</li>
+                <li>Sequelize</li>
+                <li>Python</li>
+                <li>AWS S3</li>
+              </ul>
+            </div>
+          </article>
+          <article class="reel__card">
+            <div class="reel__index">02 / OMS</div>
+            <div class="reel__body">
+              <p class="eyebrow">Developer/QA Tester, 2025</p>
+              <h3>Web-Based Optical Management System with Data Analytics</h3>
+              <p class="reel__client">
+                EverBright Optical Clinic – Capstone Project ·
+                <a
+                  href="https://github.com/Genesis2327/Web-Based-Optical-Management-System-with-Data-Analytics"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub: https://github.com/Genesis2327/Web-Based-Optical-Management-System-with-Data-Analytics</a
+                >
+              </p>
+              <ul>
+                <li>
+                  Developed a full-stack optical management system leveraging React and Laravel for
+                  efficient clinic operations.
+                </li>
+                <li>
+                  Implemented robust inventory management and point-of-sale features, boosting
+                  operational efficiency.
+                </li>
+                <li>
+                  Created RESTful API integrations for real-time data handling and reporting.
+                </li>
+                <li>
+                  Designed responsive user interfaces utilizing Tailwind CSS and Bootstrap to
+                  improve accessibility.
+                </li>
+                <li>
+                  Integrated real-time notification mechanisms using WebSockets to enhance user
+                  engagement.
+                </li>
+              </ul>
+              <ul class="tags">
+                <li>React</li>
+                <li>Laravel</li>
+                <li>REST API</li>
+                <li>Tailwind CSS</li>
+                <li>Bootstrap</li>
+                <li>WebSockets</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="skills" id="skills" data-observe>
+        <div class="section-rail">
+          <span>04</span>
+          <span>modules</span>
+        </div>
+        <header class="section-head reveal">
+          <p class="eyebrow">// skills</p>
+          <h2>Loadout tree</h2>
+          <p class="hint">Select a module to scatter its tags into the signal field.</p>
+        </header>
+        <div class="skills__board">
+          <div class="skills__tree reveal" role="tablist" aria-label="Skill categories">
+            <button type="button" role="tab" aria-selected="true" data-cat="all">
+              ALL.SYS
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-cat="programming">
+              Programming
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-cat="frontend">
+              Frontend
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-cat="backend">
+              Backend / Database
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-cat="api">
+              API / Real-Time
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-cat="cloud">
+              Cloud / DevOps
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-cat="ai">
+              AI / Computer Vision
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-cat="mobile">Mobile</button>
+            <button type="button" role="tab" aria-selected="false" data-cat="ui">
+              UI / Visualization
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-cat="qa">
+              IT / Testing
+            </button>
+          </div>
+          <div class="skills__cloud reveal" id="skill-cloud" aria-live="polite">
+            <span class="pill" data-cat="programming">JavaScript</span>
+            <span class="pill" data-cat="programming">TypeScript</span>
+            <span class="pill" data-cat="programming">Python</span>
+            <span class="pill" data-cat="programming">PHP</span>
+            <span class="pill" data-cat="programming">SQL</span>
+            <span class="pill" data-cat="programming">HTML</span>
+            <span class="pill" data-cat="programming">CSS</span>
+            <span class="pill" data-cat="frontend">React.js</span>
+            <span class="pill" data-cat="frontend">React Native</span>
+            <span class="pill" data-cat="frontend">Vite</span>
+            <span class="pill" data-cat="frontend">Tailwind CSS</span>
+            <span class="pill" data-cat="frontend">Bootstrap</span>
+            <span class="pill" data-cat="frontend">Material UI</span>
+            <span class="pill" data-cat="backend">Node.js</span>
+            <span class="pill" data-cat="backend">Express.js</span>
+            <span class="pill" data-cat="backend">PHP</span>
+            <span class="pill" data-cat="backend">REST APIs</span>
+            <span class="pill" data-cat="backend">MySQL</span>
+            <span class="pill" data-cat="backend">SQLite</span>
+            <span class="pill" data-cat="backend">MongoDB</span>
+            <span class="pill" data-cat="backend">Sequelize ORM</span>
+            <span class="pill" data-cat="api">Axios</span>
+            <span class="pill" data-cat="api">React Query</span>
+            <span class="pill" data-cat="api">Socket.IO</span>
+            <span class="pill" data-cat="api">WebSockets</span>
+            <span class="pill" data-cat="api">JSON</span>
+            <span class="pill" data-cat="cloud">AWS S3</span>
+            <span class="pill" data-cat="cloud">Docker</span>
+            <span class="pill" data-cat="cloud">Git</span>
+            <span class="pill" data-cat="cloud">GitHub</span>
+            <span class="pill" data-cat="cloud">npm</span>
+            <span class="pill" data-cat="cloud">Netlify</span>
+            <span class="pill" data-cat="cloud">Vercel</span>
+            <span class="pill" data-cat="ai">OpenCV</span>
+            <span class="pill" data-cat="ai">dlib</span>
+            <span class="pill" data-cat="ai">Face Recognition</span>
+            <span class="pill" data-cat="ai">PyTorch</span>
+            <span class="pill" data-cat="mobile">React Native</span>
+            <span class="pill" data-cat="mobile">Flutter</span>
+            <span class="pill" data-cat="mobile">Dart</span>
+            <span class="pill" data-cat="ui">Recharts</span>
+            <span class="pill" data-cat="ui">Radix UI</span>
+            <span class="pill" data-cat="ui">Lucide React</span>
+            <span class="pill" data-cat="ui">Framer Motion</span>
+            <span class="pill" data-cat="qa">Manual QA</span>
+            <span class="pill" data-cat="qa">Test Case Creation</span>
+            <span class="pill" data-cat="qa">Functional Testing</span>
+            <span class="pill" data-cat="qa">Defect Reporting</span>
+            <span class="pill" data-cat="qa">Test Documentation</span>
+            <span class="pill" data-cat="qa">JIRA</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="certs" id="certifications" data-observe>
+        <div class="section-rail">
+          <span>05</span>
+          <span>badges</span>
+        </div>
+        <header class="section-head reveal">
+          <p class="eyebrow">// certifications</p>
+          <h2>Signal credentials</h2>
+        </header>
+        <div class="badge-wall">
+          <article class="badge reveal">
+            <a href="assets/certs/cybersecurity.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="assets/certs/cybersecurity.png"
+                alt="Certificate: Introduction to Cybersecurity awarded to Genesis Abanales"
+              />
+            </a>
+            <div>
+              <h3>Introduction to Cybersecurity</h3>
+              <p>DICT-ITU DTC Initiative, January 2026, 6 hours</p>
+            </div>
+          </article>
+          <article class="badge reveal">
+            <a href="assets/certs/data-science-python.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="assets/certs/data-science-python.png"
+                alt="Certificate: Data Science Essentials with Python awarded to Genesis Abanales"
+              />
+            </a>
+            <div>
+              <h3>Data Science Essentials with Python</h3>
+              <p>Networking Academy, March 2026, 40 hours</p>
+            </div>
+          </article>
+          <article class="badge reveal">
+            <a href="assets/certs/python-essentials-2.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="assets/certs/python-essentials-2.png"
+                alt="Certificate: Python Essentials 2 awarded to Genesis Abanales"
+              />
+            </a>
+            <div>
+              <h3>Python Essentials 2</h3>
+              <p>Networking Academy, March 2026, 40 hours</p>
+            </div>
+          </article>
+          <article class="badge reveal">
+            <a href="assets/certs/google-analytics.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="assets/certs/google-analytics.png"
+                alt="Google Analytics Certification for Abanales Genesis M."
+              />
+            </a>
+            <div>
+              <h3>Google Analytics Certification</h3>
+              <p>Google, April 2026</p>
+            </div>
+          </article>
+          <article class="badge reveal">
+            <a href="assets/certs/ai-powered-ads.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="assets/certs/ai-powered-ads.png"
+                alt="AI-Powered Performance Ads Certification for Abanales Genesis M."
+              />
+            </a>
+            <div>
+              <h3>AI-Powered Performance Ads Certification</h3>
+              <p>Google, April 2026</p>
+            </div>
+          </article>
+          <article class="badge reveal">
+            <a href="assets/certs/google-ads-apps.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="assets/certs/google-ads-apps.png"
+                alt="Google Ads Apps Certification for Abanales Genesis M."
+              />
+            </a>
+            <div>
+              <h3>Google Ads Apps Certification</h3>
+              <p>Google, April 2026</p>
+            </div>
+          </article>
+          <article class="badge reveal">
+            <a href="assets/certs/google-ads-search.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="assets/certs/google-ads-search.png"
+                alt="Google Ads Search Certification for Abanales Genesis M."
+              />
+            </a>
+            <div>
+              <h3>Google Ads Search Certification</h3>
+              <p>Google, April 2026</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="education" id="education" data-observe>
+        <div class="section-rail">
+          <span>06</span>
+          <span>records</span>
+        </div>
+        <header class="section-head reveal">
+          <p class="eyebrow">// education</p>
+          <h2>Academic ledger</h2>
+        </header>
+        <div class="ledger">
+          <article class="diploma reveal">
+            <div class="diploma__seal" aria-hidden="true">UC</div>
+            <div>
+              <time datetime="2026">2026</time>
+              <h3>Pamantasan ng Cabuyao (University of Cabuyao)</h3>
+              <p>Bachelor of Science in Information Technology</p>
+            </div>
+          </article>
+          <article class="diploma reveal">
+            <div class="diploma__seal diploma__seal--alt" aria-hidden="true">PNHS</div>
+            <div>
+              <time datetime="2022">2022</time>
+              <h3>Pulo National High School</h3>
+              <p>Senior High School — With Honor | Best in Work Immersion</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" data-observe>
+        <canvas class="contact__grid" id="contact-grid" aria-hidden="true"></canvas>
+        <div class="contact__panel">
+          <div class="contact__copy reveal">
+            <p class="eyebrow">// handshake</p>
+            <h2>Get In Touch</h2>
+            <p class="contact__lead">
+              Open a channel — email, voice, or a social port. This is the close of the reel.
+            </p>
+            <address>
+              <p>
+                Email —
+                <a href="mailto:abanalesgenesis76@gmail.com">abanalesgenesis76@gmail.com</a>
+              </p>
+              <p>
+                Phone —
+                <a href="tel:+639151129644">+63 915 112 9644</a>
+                /
+                <a href="tel:+639244800951">+63 924 480 0951</a>
+              </p>
+              <p>Location — Cabuyao, Laguna, Philippines</p>
+            </address>
+          </div>
+          <div class="contact__ports reveal">
+            <a
+              class="port magnetic"
+              href="https://github.com/Genesis2327"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="port__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                  <path
+                    d="M12 .5A11.5 11.5 0 0 0 .5 12.6c0 5.35 3.44 9.89 8.21 11.49.6.11.82-.26.82-.58v-2.17c-3.34.74-4.04-1.45-4.04-1.45-.55-1.4-1.34-1.77-1.34-1.77-1.1-.76.08-.74.08-.74 1.22.09 1.86 1.27 1.86 1.27 1.08 1.87 2.83 1.33 3.52 1.02.11-.8.42-1.33.76-1.64-2.67-.31-5.47-1.36-5.47-6.06 0-1.34.47-2.43 1.24-3.29-.13-.3-.54-1.56.12-3.25 0 0 1.01-.33 3.3 1.25a11.2 11.2 0 0 1 6 0c2.28-1.58 3.29-1.25 3.29-1.25.66 1.69.25 2.95.12 3.25.77.86 1.24 1.95 1.24 3.29 0 4.71-2.81 5.74-5.49 6.05.43.38.81 1.12.81 2.26v3.35c0 .32.22.7.83.58A11.51 11.51 0 0 0 23.5 12.6 11.5 11.5 0 0 0 12 .5Z"
+                  />
+                </svg>
+              </span>
+              GitHub
+            </a>
+            <a
+              class="port magnetic"
+              href="https://www.facebook.com/genesis.abanales"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="port__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                  <path
+                    d="M13.5 21v-7.2h2.43l.36-2.82H13.5V9.18c0-.82.23-1.38 1.4-1.38h1.5V5.28A20.1 20.1 0 0 0 14.16 5C12 5 10.5 6.3 10.5 8.9v2.08H8.1v2.82h2.4V21H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-9.5Z"
+                  />
+                </svg>
+              </span>
+              Facebook
+            </a>
+            <a
+              class="port magnetic"
+              href="https://m.me/genesis.abanales"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="port__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                  <path
+                    d="M12 2C6.5 2 2 6.13 2 11.3c0 2.94 1.46 5.56 3.74 7.28V22l3.42-1.88c.9.25 1.85.38 2.84.38 5.5 0 10-4.13 10-9.2S17.5 2 12 2Zm1.02 12.42-2.55-2.72-4.97 2.72 5.47-5.82 2.61 2.72 4.91-2.72-5.47 5.82Z"
+                  />
+                </svg>
+              </span>
+              Messenger
+            </a>
+            <a
+              class="port magnetic"
+              href="https://www.linkedin.com/in/abanales-genesis-m-1927b6408/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="port__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                  <path
+                    d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0Z"
+                  />
+                </svg>
+              </span>
+              LinkedIn
+            </a>
+            <a class="btn btn--primary magnetic" href="mailto:abanalesgenesis76@gmail.com"
+              >Send a signal</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__grid">
+        <p class="footer__brand">Genesis M. Abanales</p>
+        <p class="footer__line">Open to opportunities in software development and QA.</p>
+        <ul class="footer__links">
+          <li>
+            <a href="mailto:abanalesgenesis76@gmail.com">abanalesgenesis76@gmail.com</a>
+          </li>
+          <li>
+            <a href="tel:+639151129644">+63 915 112 9644</a>
+          </li>
+          <li>
+            <a href="tel:+639244800951">+63 924 480 0951</a>
+          </li>
+          <li>
+            <a href="https://github.com/Genesis2327" target="_blank" rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/genesis.abanales"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Facebook</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/abanales-genesis-m-1927b6408/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </li>
+          <li>Cabuyao, Laguna, Philippines</li>
+        </ul>
+        <div class="footer__icons">
+          <a href="https://github.com/Genesis2327" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 .5A11.5 11.5 0 0 0 .5 12.6c0 5.35 3.44 9.89 8.21 11.49.6.11.82-.26.82-.58v-2.17c-3.34.74-4.04-1.45-4.04-1.45-.55-1.4-1.34-1.77-1.34-1.77-1.1-.76.08-.74.08-.74 1.22.09 1.86 1.27 1.86 1.27 1.08 1.87 2.83 1.33 3.52 1.02.11-.8.42-1.33.76-1.64-2.67-.31-5.47-1.36-5.47-6.06 0-1.34.47-2.43 1.24-3.29-.13-.3-.54-1.56.12-3.25 0 0 1.01-.33 3.3 1.25a11.2 11.2 0 0 1 6 0c2.28-1.58 3.29-1.25 3.29-1.25.66 1.69.25 2.95.12 3.25.77.86 1.24 1.95 1.24 3.29 0 4.71-2.81 5.74-5.49 6.05.43.38.81 1.12.81 2.26v3.35c0 .32.22.7.83.58A11.51 11.51 0 0 0 23.5 12.6 11.5 11.5 0 0 0 12 .5Z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/genesis.abanales"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path
+                d="M13.5 21v-7.2h2.43l.36-2.82H13.5V9.18c0-.82.23-1.38 1.4-1.38h1.5V5.28A20.1 20.1 0 0 0 14.16 5C12 5 10.5 6.3 10.5 8.9v2.08H8.1v2.82h2.4V21H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-9.5Z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/abanales-genesis-m-1927b6408/"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path
+                d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/theme.js" defer></script>
+    <script src="js/cursor.js" defer></script>
+    <script src="js/nav.js" defer></script>
+    <script src="js/grid.js" defer></script>
+    <script src="js/typewriter.js" defer></script>
+    <script src="js/magnetic.js" defer></script>
+    <script src="js/stack-icons.js" defer></script>
+    <script src="js/skills.js" defer></script>
+    <script src="js/animations.js" defer></script>
+  </body>
+</html>
